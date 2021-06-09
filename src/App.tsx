@@ -1,17 +1,19 @@
 import './App.css';
-import { Switch, Route } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './components/login'
-import LoggedIn from './components/loggedIn'
+import ProtectedRouter from './components/protectedRouter'
+import PrivatePage from './components/privatePage'
+import PublicPage from './components/publicPage'
+import ButtonLogOut from './components/buttonLogOut'
 
 function App() {
   return (
-    <div className="App">
       <Switch>
-        <Route path= '/login' component={Login}/>
-        <Route path= '/loggedIn' component={LoggedIn}/>
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/public-page' component={PublicPage} />
+        <ProtectedRouter path='/private-page' component={PrivatePage} />
       </Switch>
-      
-    </div>
   );
 }
 
