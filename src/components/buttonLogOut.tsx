@@ -9,7 +9,7 @@ const ButtonLogOut = () => {
     }
     return (
         <div>
-            <Link to='/login'>  
+            <Link to='/login4'>  
             <Button variant="contained" color="primary" onClick={logout}>
             Log Out
       </Button>
