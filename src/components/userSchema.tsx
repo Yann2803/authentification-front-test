@@ -1,5 +1,4 @@
-import { array, boolean, mixed, number, object, string } from 'yup';
-
+import { object, string } from 'yup';
 
 const userSchema = object({
   email: string().email().required("Email is a required field"),

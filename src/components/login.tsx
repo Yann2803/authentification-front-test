@@ -1,12 +1,10 @@
-import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import TextField from '@material-ui/core/TextField';
 import userSchema from './userSchema';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { Link, useHistory } from 'react-router-dom'
-
+import { useHistory } from 'react-router-dom'
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -19,11 +17,11 @@ const useStyles = makeStyles((theme: Theme) =>
         },
     }),
 );
-const Login4 = () => {
+const Login = () => {
     const classes = useStyles();
     const history = useHistory();
 
-    const handleSubmit = (email: string, password: string) => {
+    const handleSubmit = async (email: string, password: string) => {
         const opts = {
             method: 'POST',
             headers: {
@@ -33,21 +31,25 @@ const Login4 = () => {
                 email: email,
                 password: password,
             })
-
         }
-        fetch('http://127.0.0.1:5000/login', opts)
-            .then(res => {
-                console.log('this is res', res)
-                if (res.status === 200) return res.json();
-            })
-            .then(data => {
-                localStorage.setItem('token', JSON.stringify(data.access_token))
-                console.log('this is the data', data)
-            })
 
-            .catch(error => {
-                console.error('error', error)
-            })
+        try {
+            const response = await fetch('http://127.0.0.1:5000/login', opts)
+            if (response.status !== 200) {
+                alert('there has been an error')
+                return false
+            }
+
+            const data = await response.json()
+            localStorage.setItem('token', JSON.stringify(data.access_token))
+            localStorage.setItem('refresh_token', JSON.stringify(data.refresh_token))
+            console.log('this is the fetch data', data)
+            return data
+        }
+
+        catch (error) {
+            console.error('there has been an error login in')
+        }
     };
     return (
         <Formik
@@ -76,4 +78,4 @@ const Login4 = () => {
     );
 };
 
-export default Login4
+export default Login

@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 
@@ -9,7 +8,7 @@ const ButtonLogOut = () => {
     }
     return (
         <div>
-            <Link to='/login4'>  
+            <Link to='/login'>  
             <Button variant="contained" color="primary" onClick={logout}>
             Log Out
       </Button>

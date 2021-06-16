@@ -14,7 +14,7 @@ const accessToken = window.localStorage.getItem("token")
 
    return (
       <>
-         {accessToken ? <Component /> : <Redirect to={{ pathname: "/login4"}} />}
+         {accessToken ? <Component /> : <Redirect to={{ pathname: "/login"}} />}
       </>
    )
 }

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
 import { Link } from "react-router-dom"
+import Button from '@material-ui/core/Button';
 
 const PublicPage = () => {
     
@@ -10,9 +10,7 @@ const PublicPage = () => {
                 "this is the public page"
             </h4>
             <Link to='/private-page'>
-                <button >
-                    Go to private page
-                </button>
+            <Button type="submit" variant="contained">Go to private page</Button>
             </Link>
         </div>
 
