@@ -68,6 +68,16 @@ const LoginForm = () => {
             data.status ? history.replace('/public-page') : history.replace('/temporary');
             console.log('this is the fetch data', data)
             return data
+
+            /*if (data.status === false) {
+                history.replace('/temporary');
+            }
+            else {
+                localStorage.setItem('token', JSON.stringify(data.access_token))
+                localStorage.setItem('refresh_token', JSON.stringify(data.refresh_token))
+                history.replace('/public-page')
+
+            }*/
         }
 
         catch (error) {
