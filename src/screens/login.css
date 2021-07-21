@@ -1,0 +1,35 @@
+.blueBackground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#3845B0, #121135);
+    height: 40vh
+}
+
+.img {
+    width: 60%;
+}
+
+.credits {
+    color: gray;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.input {
+    border: 1px solid #8281A1;
+    border-radius: 1.5rem;
+    padding: .67857143em 3em;
+    text-align: center;
+    outline: none;
+}
+
+.LoginForm {
+    padding-bottom: 8px;
+    padding-top: 8px;
+}

@@ -1,0 +1,28 @@
+.logoStrateoControl {
+	display: block;
+	width: 80%;
+}
+
+.logoStrateoControl > .st0{
+	fill: var(--c0);
+}
+
+.logoStrateoControl > g > g > .st0{
+	fill: var(--c0);
+}
+
+.logoStrateoControl.ready > .st1{
+	fill: var(--ready);
+}
+
+.logoStrateoControl.warning > .st1{
+	fill: var(--warning);
+}
+
+.logoStrateoControl.error > .st1{
+	fill: var(--error);
+}
+
+.logoStrateoControl.printing > .st1{
+	fill: var(--printing);
+}

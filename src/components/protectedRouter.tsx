@@ -1,5 +1,4 @@
 import { Redirect } from "react-router-dom"
-import React from 'react';
 
 
 export interface ProtectedRouterProps {
@@ -8,13 +7,13 @@ export interface ProtectedRouterProps {
 }
 
 
-const ProtectedRouter : React.FC<ProtectedRouterProps> = ({component: Component }) => {
+const ProtectedRouter: React.FC<ProtectedRouterProps> = ({ component: Component }) => {
 
-const accessToken = window.localStorage.getItem("token")
+   const accessToken = window.localStorage.getItem("token")
 
    return (
       <>
-         {accessToken ? <Component /> : <Redirect to={{ pathname: "/login"}} />}
+         {accessToken ? <Component /> : <Redirect to={{ pathname: "/login" }} />}
       </>
    )
 }
